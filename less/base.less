@@ -1,0 +1,142 @@
+// 定义全局的主体颜色
+@mainColor: #ff841d;
+
+// 初始化
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #5a5a5a;
+}
+// 清除图片底部三像素
+img {
+  border: none;
+  vertical-algin: middle;
+}
+body,
+html {
+  width: 100%;
+}
+
+// 头部部分的样式
+#header {
+  background-color: @mainColor;
+  height: 50px;
+  text-align: center;
+  .logo {
+    padding-top: 10px;
+    padding-left: 15px;
+    a {
+      display: inline-block;
+      img {
+        max-height: 25px;
+        overflow: hidden;
+        max-width: 185px;
+      }
+    }
+  }
+  .appdown {
+    height: 100%;
+    padding-top: 7px;
+    padding-right: 7px;
+    a {
+      display: block;
+      img {
+        max-height: 34px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+#main {
+  width: 100%;
+  height: 1300px;
+}
+// 底部部分的样式
+#footer {
+  .footer-nav {
+    text-align: center;
+    display: flex;
+    background: #efefef;
+    border-top: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+    height: 34px;
+    line-height: 34px;
+    a {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+    }
+    .login {
+      flex: 3;
+      border-right: 1px solid #c4c4c4;
+    }
+    .register {
+      flex: 3;
+      border-right: 1px solid #c4c4c4;
+    }
+    .top {
+      flex: 4;
+      img {
+        width: 15px;
+        height: 15px;
+        margin-right: 2px;
+      }
+    }
+  }
+  .bottom {
+    text-align: center;
+    background: #efefef;
+    color: #666;
+    padding: 15px;
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+      .appdwon {
+        color: red;
+      }
+    }
+  }
+}
+// 右侧固定部分的样式
+#fixed-module {
+  position: fixed;
+  right: 0px;
+  bottom: 60px;
+  width: 64px;
+  z-index: 999;
+  a {
+    display: block;
+    img {
+      width: 100%;
+    }
+  }
+  .top {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 10px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    margin: 5px auto;
+    border: 1px solid #dddddd;
+    text-align: center;
+    i {
+      color: #5a5a5a;
+      font-size: 25px;
+    }
+  }
+}
