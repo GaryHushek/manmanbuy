@@ -31,7 +31,28 @@
         </div>
     </header>
     <!-- 头部模块的结束 -->
-    <main id="main"></main>
+    <main id="main">
+        <!-- 搜索模块的开始 -->
+        <div class="search">
+            <form action="">
+                <div class="mui-input-row mui-search">
+                    <input type="search" class="" placeholder="请输入相比价的商品">
+                </div>
+                <button>搜索</button>
+            </form>
+        </div>
+        <!-- 搜索模块的结束 -->
+        <!-- 分类模块的开始 -->
+        <div class="category">
+            <ul class="mui-row categoryIndex">
+
+            </ul>
+        </div>
+        <!-- 分类模块的结束 -->
+        <!-- 推荐模块的开始 -->
+        <div class="commend"></div>
+        <!-- 推荐模块的结束 -->
+    </main>
     <!-- 底部地址栏显示模块的开始 -->
     <!-- 底部地址栏显示模块的结束 -->
     <!-- 底部模块的开始 -->
@@ -57,11 +78,22 @@
     <!-- 底部模块的结束 -->
     <!-- 右侧固定内容模块的开始 -->
     <div id="fixed-module">
-        <a href=""><img src="./images/appdown.png" alt=""></a>
-        <a href="javascript:void(0);" class="top"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+        <a href="">
+            <img src="./images/appdown.png" alt="">
+        </a>
+        <a href="javascript:void(0);" class="top">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </a>
     </div>
     <!-- 右侧固定内容模块的结束 -->
-    <!-- 引入zepto.js 因为后续插件依赖jq zepto封装了jq的常用用能 -->
+    <!-- loading模块的开始 -->
+    <div id="loading">
+        <div class="loading-img">
+            <img src="./images/loading.gif" alt="">
+        </div>
+    </div>
+    <!-- loading模块的结束 -->
+    <!-- 引入zepto.js 因为后续插件依赖jq zepto封装了jq的常用功能 -->
     <script src="./lib/zepto/zepto.min.js"></script>
     <!-- 要使用动画需要引用zepto的fx.js -->
     <script src="./lib/zepto/fx.js"></script>
@@ -73,7 +105,18 @@
     <script src="./js/base.js"></script>
     <!-- 引入index.js -->
     <script src="./js/index.js"></script>
-   
+    <!-- 分类数据模板 -->
+    <script id="categoryTemp" type="text/html">
+        {{each result as value i}}
+        <li class="mui-col-xs-3">
+            <a href="{{value.href}}" data-indexmenuId="{{value.indexmenuId}}">
+                {{#value.img}}
+                <p class="title">{{value.name}}</p>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+
 </body>
 
 </html>
