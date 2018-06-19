@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="shortcut icon" href="./mmbuy.ico" />
+    <!-- 引入Mui的css -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <!-- 引入fontAwesome的css -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 引入index.less -->
+    <!-- 引入less.js 因为less.js是编译less的文件，less是样式文件，需要让样式尽早解析生效 -->
+    <link rel="stylesheet/less" href="./less/guoneizhekou.less">
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 头部模块的开始 -->
+    <header id="header">
+        <div class="pull-left">
+            <a class="backPrePage" href="./index.html">
+                <i class="fa fa-angle-left retreat"></i>
+            </a>
+        </div>
+        <div class="title">
+            <h3>国内折扣</h3>
+        </div>
+        <div class="appdown mui-pull-right">
+            <a href="">
+                <img src="./images/header_app.png" alt="">
+            </a>
+        </div>
+    </header>
+    <!-- 头部模块的结束 -->
+    <main id="main">
+        <div class="content">
+            <div class="mui-row">
+                <ul class="product mui-row">
+
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <nav class="footer-nav">
+            <a href="./login.html" class="login">登陆</a>
+            <a href="./register.html" class="register">注册</a>
+            <a href="#" class="top">
+                <img src="./images/top.jpg" alt="">返回顶部</a>
+        </nav>
+        <div class="bottom">
+            <p>
+                <a href="#" class="appdwon">手机APP下载</a>
+                <a href="http://m.manmanbuy.com">
+                    慢慢买手机版</a> -- 掌上比价平台</p>
+            <p>
+                <a href="index.html">
+                    m.manmanbuy.com
+                </a>
+            </p>
+        </div>
+    </footer>
+    <!-- 右侧固定内容模块的开始 -->
+    <div id="fixed-module">
+        <a href="">
+            <img src="./images/appdown.png" alt="">
+        </a>
+        <a href="javascript:void(0);" class="top">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </a>
+    </div>
+    <!-- 右侧固定内容模块的结束 -->
+    <!-- loading模块的开始 -->
+    <div id="loading">
+        <div class="loading-img">
+            <img src="./images/loading.gif" alt="">
+        </div>
+    </div>
+    <!-- loading模块的结束 -->
+    <!-- 引入jq -->
+    <script src="./lib/jquery/jquery-3.1.1.min.js"></script>
+    <!-- 引入lazyload -->
+    <script src="./lib/jquery/jquery.lazyload.js"></script>
+    <!-- 引入zepto.js 因为后续插件依赖jq zepto封装了jq的常用功能 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 要使用动画需要引用zepto的fx.js -->
+    <script src="./lib/zepto/fx.js"></script>
+    <!-- 引入Mui.js -->
+    <script src="./lib/mui/js/mui.min.js"></script>
+    <!-- 引入artTemplate.js -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 引入base.js-->
+    <script src="./js/base.js"></script>
+    <!-- 引入index.js -->
+    <script src="./js/guoneizhekou.js"></script>
+    <!-- 分类数据模板 -->
+    <script id="getlindTap" type="text/html">
+        {{each result as value i}}
+        <li class="mui-col-xs-6 " data-id="{{value.productId}}">
+            <a href="./productinfo.html?id={{value.productId}} " class="picA">
+                {{#value.productImg}}
+                <p class="porduct-name">{{value.productName}}</p>
+                <p class="porduct-sbiti">
+                    {{value.productPrice}}
+                </p>
+                <span class="porduct-info">
+                    {{value.productFrom}} | 2018/6/16 10:30
+                </span>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+
+</body>
+
+</html>

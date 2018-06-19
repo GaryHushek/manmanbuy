@@ -1,3 +1,9 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "manmanbuy-git"
+<<<<<<< .mine
+    "liveServer.settings.multiRootWorkspaceName": "manmanbuy-svn"
+||||||| .r72
+    "liveServer.settings.multiRootWorkspaceName": "manmanbuy"
+=======
+    "liveServer.settings.multiRootWorkspaceName": "mmm"
+>>>>>>> .r73
 }

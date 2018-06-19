@@ -1,0 +1,58 @@
+@import "base.less";
+
+// 头部部分的样式
+#header {
+    background-color: @mainColor;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 10px;
+    text-align: center;
+    position: relative;
+    .backPrePage {
+      color: #fff;
+      font-size: 26px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .appdown {
+      height: 100%;
+      padding-top: 7px;
+      padding-right: 7px;
+      a {
+        display: block;
+        img {
+          max-height: 34px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+#main {
+    margin-top: 10px;
+
+    .webNav {
+        padding: 0px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        >a {
+            padding: 8px;
+            border: 1px solid #bbb;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            line-height: 100%;
+            background-color: #eee;
+
+            >img {
+                width: 15px;
+                margin-right: 5px;
+            }
+        }
+    }
+}

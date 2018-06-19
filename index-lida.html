@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买</title>
+    <!-- 引入ico图标 -->
+    <link rel="shortcut icon" href="./mmbuy.ico" />
+    <!-- 引入Mui的css -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <!-- 引入fontAwesome的css -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 2. 引入字体图标的CSS包 提供了页面的图标 -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入index.less -->
+    <!-- 引入less.js 因为less.js是编译less的文件，less是样式文件，需要让样式尽早解析生效 -->
+    <link rel="stylesheet/less" href="./less/index.less">
+    <script src="./lib/less/less.js"></script>
+</head>
+<body>
+    <!-- 头部模块开始 -->
+    <header id="header">
+        <div class="logo pull-left">
+            <a href="index.html">
+                <img src="./images/header_logo.png" alt="">
+            </a>
+        </div>
+        <div class="appdown mui-pull-right">
+            <a href="#">
+                <img src="./images/header_app.png" alt="">
+            </a>
+        </div>
+    </header>
+    <!-- 头部模块结束 -->
+
+    <!-- 中间模块开始 -->
+    <main id="main" class="clearfix">
+        <div class="search ">
+            <form action="">
+                <div class="mui-input-row mui-search">
+                    <input type="search" class="" placeholder="请输入搜索商品">
+                </div>
+                <input type="button" value="搜索">
+            </form>
+        </div>
+        <!-- 分割分类栏开始 -->
+        <div class="category">
+            <ul class="mui-row categoryIndex">
+            </ul>
+        </div>
+        <!-- 分割分类栏结束 -->
+
+        <!-- 标题分割开始 -->
+        <a href="#" class="a-jxhd">
+            <div class="jxhd">
+                <span>超级折扣推荐</span>
+                <img src="./images/more.png" alt="">
+            </div>
+        </a>
+        <!-- 标题分割结束 -->
+
+        <!-- 推荐模板开始 -->
+        <div class="jxhdc">
+            <ul>
+            </ul>
+            <div class="clearfix"></div>
+            <div class="more_bar">
+                <a href="#">更多优惠信息 >></a>
+            </div>
+        </div>
+        <!-- 推荐模板结束 -->
+        <!-- 标题分割开始 -->
+        <a href="#" class="a-jxhd">
+                <div class="jxhd">
+                    <span>品牌排行</span>
+                    <img src="./images/more.png" alt="">
+                </div>
+            </a>
+        <!-- 标题分割结束 -->
+    </main>
+    <!-- 中间模块结束 -->
+    
+    <!-- 底部模块开始 -->
+    <footer id="footer">
+        <div class="foot_top">
+            <a href="">登录</a>
+            <a href="">注册</a>
+            <a href=""><i class="fa fa-arrow-up"></i>返回顶部</a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="" class="app">手机APP下载 </a>
+                <a href="">慢慢买手机版</a>
+                -- 掌上比价平台
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+    <!-- 底部模块结束 -->
+
+
+
+     <!-- 引入zepto.js 因为后续插件依赖jq zepto封装了jq的常用功能 -->
+     <script src="./lib/zepto/zepto.min.js"></script>
+     <!-- 要使用动画需要引用zepto的fx.js -->
+     <script src="./lib/zepto/fx.js"></script>
+     <!-- 引入Mui.js -->
+     <script src="./lib/mui/js/mui.min.js"></script>
+     <!-- 引入artTemplate.js -->
+     <script src="./lib/artTemplate/template.js"></script>
+     <!-- 引入base.js-->
+     <script src="./js/base.js"></script>
+     <!-- 引入index.js -->
+     <script src="./js/index.js"></script>
+     <!-- 分类数据模板 -->
+     <script id="categoryTemp" type="text/html">
+        {{each result as value i}}
+        <li class="mui-col-xs-3">
+            <a href="{{value.href}}" data-id="{{value.indexmenuId}}">
+                {{#value.img}}
+                <p class="title">{{value.name}}</p>
+            </a>
+        </li>
+        {{/each}}
+     </script>
+     <!-- 推荐数据模板开始 -->
+     <script id="recommendTemp" type="text/html">
+        {{each result as value i}}
+        <li class="clearfix ui-border-b">
+                <a href="#">
+                    <div class="pic">
+                        {{#value.productImgSm}}
+                    </div>
+                    <div class="clearfix info">
+                        <div class="title">
+                            {{value.productName}}
+                        </div>
+                        <div class="other">
+                            <span class="mall">{{value.productFrom}} | {{value.productTime}}</span>
+                            <span class="comment">
+                                <i class="fa fa-pencil-square-o"></i>
+                                <i class="pinglun">{{value.productComCount}}</i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        {{/each}}
+
+    </script>
+</body>
+</html>

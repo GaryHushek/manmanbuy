@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操蛋页面</title>
+    <!-- 引入站点图标 -->
+    <link rel="icon" href="mmbuy.ico">
+    <!-- 引入Mui的css -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <!-- 引入fontAwesome的css -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 引入index.less -->
+    <!-- 引入less.js 因为less.js是编译less的文件，less是样式文件，需要让样式尽早解析生效 -->
+    <link rel="stylesheet/less" href="./less/coudan.less">
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 头部模块的开始 -->
+    <header id="header">
+        <a href="#" class="backPrePage pull-left">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </a>
+        <span class="title" class="pull-left">凑单品</span>
+    </header>
+    <!-- 头部模块的结束 -->
+    <!-- 主体部分的开始 -->
+    <main id="main">
+
+        <!-- 主体导航 -->
+        <section class="coudan-nav">
+            <ul class="nav-bar">
+                <li class="nav-title wang-toggle">
+                    <a href="#">京东
+                        <i class="mui-icon mui-icon-arrowup"></i>
+                    </a>
+                </li>
+                <li class="nav-title wang-toggle">
+                    <a href="#">华北
+                        <i class="mui-icon mui-icon-arrowup"></i>
+                    </a>
+                </li>
+                <li class="nav-title wang-toggle">
+                    <a href="#">1元
+                        <i class="mui-icon mui-icon-arrowup"></i>
+                    </a>
+                </li>
+                <li class="nav-menu wang-toggle">
+                    <a href="#">
+                        <i class="mui-icon mui-icon-list"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sub-box">
+                <!-- 隐藏的站点选择-->
+                <li class="sub-content"></li>
+                <!-- 隐藏的地区选择 -->
+                <li class="sub-area"></li>
+                <!-- 隐藏的价格选择 -->
+                <li class="sub-price"></li>
+                <!-- 隐藏的子菜单-->
+                <li class="sub-content-menu wang-toggle">
+                    <div class="sub-search">
+                        <input type="text" class="sub-search-input" placeholder="搜索你想搜的凑单品">
+                        <span class="mui-icon mui-icon-search icon-search"></span>
+                        <a href="#">搜索</a>
+                    </div>
+                    <div class="sub-content-array">
+                        <p>排序</p>
+                        <ul class="sub-select">
+                            <li>
+                                <a href="#">销量</a>
+                            </li>
+                            <li>
+                                <a href="#" class="selected">价格↑</a>
+                            </li>
+                            <li>
+                                <a href="#">价格↓</a>
+                            </li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="sub-content-category">
+                        <p>排序</p>
+                        <ul class="sub-select">
+                            <li>
+                                <a href="#" class="selected">全部</a>
+                            </li>
+                            <li>
+                                <a href="#">家具</a>
+                            </li>
+                            <li>
+                                <a href="#">数码</a>
+                            </li>
+                            <li>
+                                <a href="#">办公</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-select">
+                            <li>
+                                <a href="#">个护</a>
+                            </li>
+                            <li>
+                                <a href="#">食品</a>
+                            </li>
+                            <li>
+                                <a href="#">母婴</a>
+                            </li>
+                            <li>
+                                <a href="#">服饰</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- 主体内容 -->
+        <section class="coudan-content">
+            <ul class="content-list">
+
+            </ul>
+        </section>
+        <!-- 小乌龟爬 -->
+        <a href="#" class="paapa top">
+            <img src="./images/favorite.ico" alt="🐢" class="tortoise">
+        </a>
+    </main>
+     <!-- 底部模块的开始 -->
+     <footer id="footer">
+        <nav class="footer-nav">
+            <a href="javascript:void(0)" class="login">登陆</a>
+            <a href="javascript:void(0)" class="register">注册</a>
+            <a href="#" class="top">
+                <img src="./images/top.jpg" alt="">返回顶部</a>
+        </nav>
+        <div class="bottom">
+            <p>
+                <a href="#" class="appdwon">手机APP下载</a>
+                <a href="http://m.manmanbuy.com">
+                    慢慢买手机版</a> -- 掌上比价平台</p>
+            <p>
+                <a href="index.html">
+                    m.manmanbuy.com
+                </a>
+            </p>
+        </div>
+    </footer>
+    <!-- 底部模块的结束 -->
+    <!-- 加载画面 -->
+    <div id="loading">
+        <div class="loading-img">
+            <img src="./images/loading.gif" alt="">
+        </div>
+    </div>
+    <!-- 模版引擎渲染页面 -->
+    <!-- 电商网站列表 -->
+    <script id="nav-subContent-shop" type="text/html">
+        <ul>
+            {{each result as value i}}
+            <li class="subNew">
+                <!-- coudan.html?shopid={{value.shopId}}&areaid={{value.areaId}} -->
+                <a href="#" data-id={{value.shopId}}>{{value.shopName}}
+                    <i class="mui-icon mui-icon-checkmarkempty nike"></i>
+                    {{if i == 0}}
+                    <span id="naike" class="mui-icon mui-icon-checkmarkempty nike"></span>
+                    {{/if}}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <!-- nav地区列表 -->
+    <script id="nav-subContent-area" type="text/html">
+        <ul>
+            {{each result as value i}}
+            <li class="subNew">
+                <a href="#" data-id={{value.areaId}}>{{value.areaName}}
+                    <i class="mui-icon mui-icon-checkmarkempty nike"></i>
+                    {{if i == 0}}
+                    <span id="naike" class="mui-icon mui-icon-checkmarkempty nike"></span>
+                    {{/if}}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <!-- content商品内容  -->
+    <script id="productsTmp" type="text/html">
+        {{each result as value i}}
+        <li>
+            <a href="#">
+                <img class="lazy" src="{{value.productImg}}" data-original="{{value.productImg}}" alt="">
+                <div class="price">
+                    <p class="title">{{value.productName}}</p>
+                    <i>{{value.productPrice}}</i>
+                </div>
+            </a>
+            <a href="#" class="gogogo">去凑单</a>
+        </li>
+        {{/each}}
+    </script>
+    <!-- loading模块的结束 -->
+    <!-- 引入zepto.js 因为后续插件依赖jq zepto封装了jq的常用用能 -->
+    <script src="./lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="./lib/jquery/jquery.lazyload.js"></script>
+    <!-- 引入Mui.js -->
+    <script src="./lib/mui/js/mui.min.js"></script>
+    <!-- 引入artTemplate.js -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 引入base.js-->
+    <script src="./js/base.js"></script>
+    <!-- 引入index.js -->
+    <script src="./js/coudan.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <!-- 引入ico图标 -->
+     <link rel="shortcut icon" href="./mmbuy.ico" />
+    <!-- 引入Mui的css -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <!-- 引入fontAwesome的css -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 引入index.less -->
+    <!-- 引入less.js 因为less.js是编译less的文件，less是样式文件，需要让样式尽早解析生效 -->
+    <link rel="stylesheet/less" href="./less/shengqian.less">
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 头部模块的开始 -->
+    <header id="header">
+        <a href="./index.html" class="backPrePage pull-left">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </a>
+        <span class="title" class="pull-left">省钱控 - 最新优惠</span>
+        <div class="appdown mui-pull-right">
+            <a href="">
+                <img src="./images/header_app.png" alt="">
+            </a>
+        </div>
+    </header>
+    <div id="loading">
+            <div class="loading-img">
+                <img src="./images/loading.gif" alt="">
+            </div>
+    </div>
+    <!-- 头部模块的结束 -->
+    <!-- 主体模块开始 -->
+    <main id="main">
+           
+        <div class="content">
+            <!-- 区域滚动的父容器 -->
+            <div class="mui-scroll-wrapper">
+                <!-- 区域滚动的子容器 -->
+                <div class="mui-scroll">
+                        
+                    <!-- 真实要显示的DOM内容 --> 
+                    <div class="introduce">
+                        <ul class="mui-table-view">                            
+                            <li class="mui-table-view-cell mui-media">                               
+                            </li>
+                        </ul>  
+                    </div>                  
+                    <div class="paging">
+                            <button type="button" class="mui-pull-left before">上一页</button>
+                            <select id="selectPage">
+                                   
+                            </select>
+                            <button type="button" class="mui-pull-right after">下一页</button>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 主体模块结束 -->
+
+
+
+
+    <!-- 底部地址栏显示模块的开始 -->
+    <!-- 底部地址栏显示模块的结束 -->
+    <!-- 底部模块的开始 -->
+    <footer id="footer">
+        <nav class="footer-nav">
+            <a href="./login.html" class="login">登陆</a>
+            <a href="./register.html" class="register">注册</a>
+            <a href="#" class="top">
+                <img src="./images/top.jpg" alt="">返回顶部</a>
+        </nav>
+        <div class="bottom">
+            <p>
+                <a href="#" class="appdwon">手机APP下载</a>
+                <a href="http://m.manmanbuy.com">
+                    慢慢买手机版</a> -- 掌上比价平台</p>
+            <p>
+                <a href="index.html">
+                    m.manmanbuy.com
+                </a>
+            </p>
+        </div>
+    </footer>
+    <!-- 底部模块的结束 -->
+    <!-- 右侧固定内容模块的开始 -->
+    <div id="fixed-module">
+        <a href="">
+            <img src="./images/appdown.png" alt="">
+        </a>
+        <a href="javascript:void(0);" class="top">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </a>
+    </div>
+    <!-- 右侧固定内容模块的结束 -->
+    <!-- loading模块的开始 -->
+    <div id="loading">
+        <div class="loading-img">
+            <img src="./images/loading.gif" alt="">
+        </div>
+    </div>
+    <!-- loading模块的结束 -->
+    <!-- 引入zepto.js 因为后续插件依赖jq zepto封装了jq的常用功能 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 要使用动画需要引用zepto的fx.js -->
+    <script src="./lib/zepto/fx.js"></script>
+    <!-- 引入Mui.js -->
+    <script src="./lib/mui/js/mui.min.js"></script>
+    <!-- 引入artTemplate.js -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 引入base.js-->
+    <script src="./js/base.js"></script>
+    <!-- 引入index.js -->
+    <script src="./js/shengqian.js"></script>
+    <script id="introTmp" type="text/html">
+        {{each}}
+        <li class="mui-table-view-cell mui-media">
+            <a href="./shengqianDetail.html?id={{$value.productId}}">                    
+                {{#$value.productImgSm}}                   
+                <div class="mui-media-body">
+                    <div class="title">
+                       <p> {{$value.productName}}
+                        <span>{{$value.productPinkage}}</span></p>
+                    </div>
+                    <p class='mui-ellipsis'>
+                        <span>{{$value.productFrom}}</span>&nbsp;  |
+                        <span>{{$value.productTime}}</span>
+                        <span class="mui-icon mui-icon-chat mui-pull-right">&nbsp; {{$value.productComCount.replace('有','').replace('人评论','')}}</span>
+                    </p>
+                </div>
+            </a>
+        </li>
+        {{/each}}
+
+    </script>
+    
+
+    <script type="text/html" id="selectTmp">
+        {{each arr as tt i}}
+            <option value="{{tt}}" class="currentShow">{{tt}}/{{arr.length}}</option>
+        {{/each}}
+
+    </script> 
+
+</body>
+
+</html>

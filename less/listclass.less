@@ -1,0 +1,92 @@
+@import 'base.less';
+.container{
+    position: relative;
+    height: 100%;
+    background-color: #eee;
+}
+#main {
+    overflow: hidden;
+    min-height: 80%;
+    // 搜索模块的样式
+    .search {
+      position: relative;
+      z-index: 999;background-color: #fff;
+      padding: 10px 10px 0 10px;
+      border-bottom: 1px solid #e6e6e6;
+      form {
+        width: 100%;
+        .mui-search {
+          width: 90%;
+          input {
+            padding-right: 30px;
+          }
+        }
+        button {
+          width: 60px;
+          height: 34px;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          background-color: @mainColor;
+          color: white;
+          border-radius: 30px;
+        }
+      }
+    }
+    .out-category {
+        padding: 10px 15px 0;    
+        .category {
+            background-color: #eee;   
+            font-size: 17px;  
+            border-radius: 8px;
+            border: 2px solid #ccc;
+            .product-category {              
+                line-height: 24px;
+                >a {
+                    color: #000;
+                    font-weight: 600;
+                    text-decoration: none;
+                }           
+                &:after {
+                    left:0;
+                }
+            }
+        }
+        .product-content {          
+            text-align: center;
+            padding: 0;
+            li{
+                 border-bottom: 1px solid #ccc;
+                 font-weight:400;
+                 height: 40px;
+                 line-height: 40px;
+                 &:nth-child(3n+1){
+                     border-right: 1px solid #ccc;
+                 } 
+                 &:nth-child(3n){
+                    border-left: 1px solid #ccc;
+                 }
+                
+                a {
+                    width: 100%;
+                    display: block;
+                    height: 100%;
+                    text-decoration: none;
+                    font-size: 14px;
+                                      
+                }
+              }
+           } 
+        }
+    }
+    #footer{
+        bottom:0;
+        position: relative;
+        width: 100%;
+        .bottom{
+            padding: 21px;
+        }
+    }
+    #fixed-module {
+        z-index: 2000;
+    }

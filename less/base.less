@@ -1,5 +1,7 @@
 // 定义全局的主体颜色
 @mainColor: #ff841d;
+@mainGradient: -webkit-gradient(linear,0 0,0 100%,from(#ffaf47),to(#ff9000));
+
 
 // 初始化
 * {
@@ -7,6 +9,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body,html {
+  height: 100%;
+}
+
 body {
   background-color: #fff;
 }
@@ -37,13 +44,25 @@ h4,
 h5 {
   font-weight: normal;
 }
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+.clearfix {
+	*zoom: 1;
+}
 // 头部部分的样式
 #header {
   position: relative;
   background-color: @mainColor;
   height: 50px;
   text-align: center;
-  z-index: 999;
+  z-index: 99;
   .logo {
     padding-top: 10px;
     padding-left: 15px;
@@ -69,41 +88,41 @@ h5 {
     }
   }
 }
-
-#main {
-  width: 100%;
-  min-height: 100%;
-}
-// 路径显示部分的样式
-#path-show {
-  margin-top: 20px;
-  height: 36px;
-  background-color: #ebebeb;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebebeb));
-  border-top: solid 1px #ebebeb;
-  border-bottom: 1px solid #ccc;
-  line-height: 36px;
-  padding-left: 8px;
-  font-size: 14px;
-  margin-bottom: 20px;
-  color: #5a5a5a;
-  position: relative;
-  z-index: 999;
-  .path {
-    li {
-      float: left;
-      .fa-chevron-right {
-        font-size: 12px;
-        color: #5a5a5a;
-        font-weight: normal;
+  #main {
+    width: 100%;
+    min-height: 100%;
+  }
+  // 路径显示部分的样式
+  #path-show {
+    margin-top: 20px;
+    height: 36px;
+    background-color: #ebebeb;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebebeb));
+    border-top: solid 1px #ebebeb;
+    border-bottom: 1px solid #ccc;
+    line-height: 36px;
+    padding-left: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #5a5a5a;
+    position: relative;
+    z-index: 99;
+    .path {
+      li {
+        float: left;
+        .fa-chevron-right {
+          font-size: 12px;
+          color: #5a5a5a;
+          font-weight: normal;
+        }
       }
     }
   }
-}
-// 底部部分的样式
-#footer {
+
+ // 底部部分的样式
+ #footer {
   position: relative;
-  z-index: 999;
+  z-index: 999; 
   .footer-nav {
     text-align: center;
     display: flex;
@@ -132,6 +151,10 @@ h5 {
         width: 15px;
         height: 15px;
         margin-right: 2px;
+
+      }
+      >i {
+        font-style: normal;
       }
     }
   }
@@ -154,7 +177,7 @@ h5 {
 #fixed-module {
   position: fixed;
   right: 0px;
-  bottom: 60px;
+  bottom: 20px;
   width: 64px;
   z-index: 999;
   a {

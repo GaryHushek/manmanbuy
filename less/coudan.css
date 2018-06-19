@@ -1,0 +1,438 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  background-color: #fff;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #5a5a5a;
+}
+img {
+  border: none;
+  vertical-algin: middle;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+.clearfix {
+  *zoom: 1;
+}
+#header {
+  position: relative;
+  background-color: #ff841d;
+  height: 50px;
+  text-align: center;
+  z-index: 99;
+}
+#header .logo {
+  padding-top: 10px;
+  padding-left: 15px;
+}
+#header .logo a {
+  display: inline-block;
+}
+#header .logo a img {
+  max-height: 25px;
+  overflow: hidden;
+  max-width: 185px;
+}
+#header .appdown {
+  height: 100%;
+  padding-top: 7px;
+  padding-right: 7px;
+}
+#header .appdown a {
+  display: block;
+}
+#header .appdown a img {
+  max-height: 34px;
+  overflow: hidden;
+}
+#main {
+  width: 100%;
+  min-height: 100%;
+}
+#path-show {
+  margin-top: 20px;
+  height: 36px;
+  background-color: #ebebeb;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebebeb));
+  border-top: solid 1px #ebebeb;
+  border-bottom: 1px solid #ccc;
+  line-height: 36px;
+  padding-left: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #5a5a5a;
+  position: relative;
+  z-index: 99;
+}
+#path-show .path li {
+  float: left;
+}
+#path-show .path li .fa-chevron-right {
+  font-size: 12px;
+  color: #5a5a5a;
+  font-weight: normal;
+}
+#footer {
+  position: relative;
+  z-index: 999;
+}
+#footer .footer-nav {
+  text-align: center;
+  display: flex;
+  background: #efefef;
+  border-top: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+  height: 34px;
+  line-height: 34px;
+}
+#footer .footer-nav a {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+#footer .footer-nav .login {
+  flex: 3;
+  border-right: 1px solid #c4c4c4;
+}
+#footer .footer-nav .register {
+  flex: 3;
+  border-right: 1px solid #c4c4c4;
+}
+#footer .footer-nav .top {
+  flex: 4;
+}
+#footer .footer-nav .top img {
+  width: 15px;
+  height: 15px;
+  margin-right: 2px;
+}
+#footer .footer-nav .top > i {
+  font-style: normal;
+}
+#footer .bottom {
+  text-align: center;
+  background: #efefef;
+  color: #666;
+  padding: 15px;
+}
+#footer .bottom p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+#footer .bottom p .appdwon {
+  color: red;
+}
+#fixed-module {
+  position: fixed;
+  right: 0px;
+  bottom: 20px;
+  width: 64px;
+  z-index: 999;
+}
+#fixed-module a {
+  display: block;
+}
+#fixed-module a img {
+  width: 100%;
+}
+#fixed-module .top {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 10px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  margin: 5px auto;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+#fixed-module .top i {
+  color: #5a5a5a;
+  font-size: 25px;
+}
+#loading {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #fff1ce;
+  display: none;
+}
+#loading .loading-img {
+  width: 80%;
+  margin: 100px auto;
+}
+#loading .loading-img img {
+  width: 100%;
+  position: relative;
+}
+body {
+  background-color: #f1f1f1;
+}
+i,
+em {
+  font-style: normal;
+}
+.on {
+  display: inline-block;
+}
+.selected {
+  background-color: #ff841d;
+  color: #fff;
+}
+#header {
+  background-color: #ff841d;
+  height: 44px;
+  line-height: 44px;
+  padding-left: 10px;
+  text-align: center;
+  position: relative;
+}
+#header .backPrePage {
+  color: #fff;
+  font-size: 26px;
+}
+#header .title {
+  font-size: 20px;
+  color: #fff;
+}
+#header .appdown {
+  height: 100%;
+  padding-top: 7px;
+  padding-right: 7px;
+}
+#header .appdown a {
+  display: block;
+}
+#header .appdown a img {
+  max-height: 34px;
+  overflow: hidden;
+}
+#main .coudan-nav .nav-bar {
+  background-color: #fff;
+  height: 37px;
+  margin-top: 3px;
+  display: flex;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+#main .coudan-nav .nav-bar > li {
+  line-height: 37px;
+  font-size: 16px;
+}
+#main .coudan-nav .nav-bar > li:nth-child(3) {
+  border-right: 1px solid #ccc;
+}
+#main .coudan-nav .nav-bar > li > a {
+  display: block;
+  width: 100%;
+}
+#main .coudan-nav .nav-bar .nav-title {
+  flex: 1;
+}
+#main .coudan-nav .nav-bar .nav-menu {
+  flex-basis: 50px;
+  margin-top: 5px;
+}
+#main .coudan-nav i.nike,
+#main .coudan-nav span.nike {
+  float: right;
+  padding-right: 10px;
+  font-size: 40px;
+  color: #ff841d;
+  display: none;
+}
+#main .coudan-nav span.nike {
+  display: block;
+}
+#main .coudan-nav .sub-content,
+#main .coudan-nav .sub-area,
+#main .coudan-nav .sub-price {
+  position: absolute;
+  top: 85px;
+  left: 0;
+  width: 100%;
+}
+#main .coudan-nav .sub-content > ul,
+#main .coudan-nav .sub-area > ul,
+#main .coudan-nav .sub-price > ul {
+  background-color: #fff;
+}
+#main .coudan-nav .sub-content > ul > li,
+#main .coudan-nav .sub-area > ul > li,
+#main .coudan-nav .sub-price > ul > li {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+}
+#main .coudan-nav .sub-content > ul > li > a,
+#main .coudan-nav .sub-area > ul > li > a,
+#main .coudan-nav .sub-price > ul > li > a {
+  display: block;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 16px;
+}
+#main .coudan-nav .sub-content-menu {
+  display: none;
+  background-color: #f7f7f7;
+  height: 270px;
+  width: 100%;
+  top: 85px;
+  left: 0;
+  position: absolute;
+  padding: 10px 0;
+}
+#main .coudan-nav .sub-content-menu .sub-search {
+  height: 35px;
+  display: flex;
+  position: relative;
+  padding-left: 10px;
+}
+#main .coudan-nav .sub-content-menu .sub-search .sub-search-input {
+  flex: 1;
+  font-size: 14px;
+  padding-left: 32px;
+  height: 35px;
+  margin: 0;
+  outline: none;
+  border: 1px solid #eee;
+}
+#main .coudan-nav .sub-content-menu .sub-search .icon-search {
+  position: absolute;
+  font-size: 20px;
+  left: 20px;
+  top: 10px;
+  color: #cccccc;
+}
+#main .coudan-nav .sub-content-menu .sub-search a {
+  line-height: 35px;
+  padding: 0 10px;
+  font-size: 16px;
+}
+#main .coudan-nav .sub-content-menu .sub-content-array,
+#main .coudan-nav .sub-content-menu .sub-content-category {
+  margin-top: 20px;
+  padding-left: 10px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+#main .coudan-nav .sub-content-menu .sub-content-array .sub-select,
+#main .coudan-nav .sub-content-menu .sub-content-category .sub-select {
+  display: flex;
+  padding-bottom: 10px;
+}
+#main .coudan-nav .sub-content-menu .sub-content-array .sub-select li,
+#main .coudan-nav .sub-content-menu .sub-content-category .sub-select li {
+  width: 25%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  line-height: 30px;
+  text-align: center;
+  margin-right: 10px;
+}
+#main .coudan-nav .sub-content-menu .sub-content-array .sub-select li:last-child,
+#main .coudan-nav .sub-content-menu .sub-content-category .sub-select li:last-child {
+  border: 0;
+}
+#main .coudan-nav .sub-content-menu .sub-content-array .sub-select li > a,
+#main .coudan-nav .sub-content-menu .sub-content-category .sub-select li > a {
+  display: block;
+  width: 100%;
+}
+#main .coudan-nav .sub-content-menu .sub-content-category .sub-select > li:last-child {
+  border: 1px solid #ccc;
+}
+#main .coudan-content .content-list {
+  width: 100%;
+  height: 100px;
+}
+#main .coudan-content .content-list li {
+  float: left;
+  width: 50%;
+  padding: 10px 5px;
+}
+#main .coudan-content .content-list li > a {
+  display: block;
+  background-color: #fff;
+  width: 100%;
+}
+#main .coudan-content .content-list li > a > img {
+  width: 100%;
+}
+#main .coudan-content .content-list li > a .price {
+  color: #ff841d;
+  padding-left: 5px;
+}
+#main .coudan-content .content-list li > a .price > p {
+  margin-bottom: 0px;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#main .coudan-content .content-list li > a .price > span {
+  font-size: 12px;
+  margin-right: -5px;
+}
+#main .coudan-content .content-list li .gogogo {
+  background-color: #ff841d;
+  text-align: center;
+  border-radius: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  color: #eee;
+}
+#main .coudan-content .content-list li .gogogo:hover {
+  color: white;
+  background-color: tomato;
+}
+#footer {
+  clear: both;
+  position: relative;
+}
+.paapa {
+  position: fixed;
+  z-index: 99;
+  right: 0px;
+  top: 520px;
+  width: 60px;
+  height: 60px;
+}
+.paapa .tortoise {
+  transform: rotate(-90deg);
+}

@@ -1,0 +1,186 @@
+// 引入公共部分样式
+@import "./base.less";
+
+// 头部部分的样式
+#header {
+  background-color: @mainColor;
+  height: 44px;
+  line-height: 44px;
+  padding-left: 10px;
+  text-align: center;
+  position: relative;
+  .backPrePage {
+    color: #fff;
+    font-size: 26px;
+  }
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .appdown {
+    height: 100%;
+    padding-top: 7px;
+    padding-right: 7px;
+    a {
+      display: block;
+      img {
+        max-height: 34px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+// 主体部分样式
+#main {
+  .top {
+    // 搜索模块的样式
+    .search {
+      position: relative;
+      z-index: 999;
+      background-color: #fff;
+      padding: 10px 10px 0 10px;
+      border-bottom: 1px solid #e6e6e6;
+      form {
+        width: 100%;
+        .mui-search {
+          width: 90%;
+          input {
+            padding-right: 30px;
+          }
+        }
+        button {
+          width: 60px;
+          height: 34px;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          background-color: @mainColor;
+          color: white;
+          border-radius: 30px;
+        }
+      }
+    }
+    .control-menu {
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      border-bottom: 1px solid #e6e6e6;
+
+      ul {
+        height: 100%;
+        li {
+          float: left;
+          height: 100%;
+          font-size: 14px;
+          a {
+            display: block;
+          }
+        }
+      }
+    }
+    #path-show {
+      margin: 0;
+    }
+  }
+  // 产品列表部分样式
+  .product-list {
+    width: 100%;
+    .content-box {
+      width: 100%;
+      padding: 0 5px;
+      li {
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid #c8c7cc;
+        &::after {
+          background-color: transparent;
+        }
+        &.control {
+          padding: 10px;
+          display: flex;
+          line-height: 32px;
+          .middle {
+            flex: 1;
+            form {
+              select {
+                display: block;
+                border: 1px solid #d4d4d4 !important;
+                width: 80%;
+                margin: 0;
+                padding: 0;
+                margin: 0 auto;
+                text-align: left;
+                padding: 5px 0px;
+                padding-right: 0px;
+                padding-left: 30px;
+                text-align: center;
+                option {
+                text-align: center;
+                  background-color: #fff;
+                  text-align: left;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+
+          .pre {
+            flex: 1;
+            text-align: center;
+            a {
+              padding: 8px 20px;
+              box-shadow: 0 0 1px #666;
+              background-color: #d4d4d4;
+              background: -webkit-gradient(
+                linear,
+                0 0,
+                0 100%,
+                from(#f1f1f1),
+                to(#d4d4d4)
+              );
+              border-radius: 5px;
+              text-align: center;
+              font-size: 14px;
+            }
+          }
+          .next {
+            flex: 1;
+          }
+        }
+        .pic {
+          img {
+            border: none;
+          }
+        }
+        .info {
+          padding-left: 10px;
+          .title {
+            white-space: normal;
+            word-break: break-all;
+            word-wrap: break-word;
+            font-size: 14px;
+          }
+          .price {
+            padding-top: 10px;
+            color: #ed0000;
+            font-size: 14px;
+            span {
+              font-size: 16px;
+              font-weight: 600;
+            }
+          }
+          .other {
+            padding-top: 5px;
+            padding-left: 2px;
+            font-size: 12px;
+            color: #a1a1a1;
+            .baojia {
+              padding-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

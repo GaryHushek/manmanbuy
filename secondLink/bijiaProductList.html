@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入ico图标 -->
+    <link rel="shortcut icon" href="../mmbuy.ico" />
+    <!-- 引入Mui的css -->
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <!-- 引入fontAwesome的css -->
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 引入index.less -->
+    <!-- 引入less.js 因为less.js是编译less的文件，less是样式文件，需要让样式尽早解析生效 -->
+    <link rel="stylesheet/less" href="../less/bijiaProductList.less">
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 头部模块的开始 -->
+    <header id="header">
+        <div class="logo pull-left">
+            <a href="../index.html">
+                <img src="../images/header_logo.png" alt="">
+            </a>
+        </div>
+        <div class="appdown mui-pull-right">
+            <a href="">
+                <img src="../images/header_app.png" alt="">
+            </a>
+        </div>
+
+    </header>
+    <!-- 头部模块的结束 -->
+    <main id="main">
+        <!-- 也面滚动固定在屏幕的模块的开始 -->
+        <div class="top">
+            <!-- 搜索模块的开始 -->
+            <div class="search">
+                <form action="">
+                    <div class="mui-input-row mui-search">
+                        <input type="search" class="" placeholder="请输入相比价的商品">
+                    </div>
+                    <button>搜索</button>
+                </form>
+            </div>
+            <!-- 搜索模块的结束 -->
+            <!-- 浏览的路径模块的开始 -->
+            <div id="path-show">
+                <ul class="path">
+                    <li>
+                        <a href="../index.html">首页&nbsp;>&nbsp;</a>
+                    </li>
+                    <li>
+                        <a href="../listclass.html">全部分类&nbsp;>&nbsp;</a>
+                    </li>
+                    <li>
+                    </li>
+                </ul>
+            </div>
+            <!-- 浏览的路径模块的结束 -->
+        </div>
+        <!-- 也面滚动固定在屏幕的模块的结束 -->
+        <div class="product-list">
+            <ul class="mui-table-view content-box">
+            </ul>
+        </div>
+    </main>
+    <!-- 主体模块的结束 -->
+    <!-- 底部模块的开始 -->
+    <footer id="footer">
+        <nav class="footer-nav">
+            <a href="../login.html" class="login">登陆</a>
+            <a href="../register.html" class="register">注册</a>
+            <a href="#" class="top">
+                <img src="../images/top.jpg" alt="">返回顶部</a>
+        </nav>
+        <div class="bottom">
+            <p>
+                <a href="#" class="appdwon">手机APP下载</a>
+                <a href="http://m.manmanbuy.com">
+                    慢慢买手机版</a> -- 掌上比价平台</p>
+            <p>
+                <a href="index.html">
+                    m.manmanbuy.com
+                </a>
+            </p>
+        </div>
+    </footer>
+    <!-- 底部模块的结束 -->
+    <!-- 右侧固定内容模块的开始 -->
+    <div id="fixed-module">
+        <a href="">
+            <img src="../images/appdown.png" alt="">
+        </a>
+        <a href="javascript:void(0);" class="top">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </a>
+    </div>
+    <!-- 右侧固定内容模块的结束 -->
+    <!-- loading模块的开始 -->
+    <div id="loading">
+        <div class="loading-img">
+            <img src="../images/loading.gif" alt="">
+        </div>
+    </div>
+    <!-- loading模块的结束 -->
+    <!-- 引入zepto.js 因为后续插件依赖jq zepto封装了jq的常用功能 -->
+    <script src="../lib/zepto/zepto.min.js"></script>
+    <!-- 要使用动画需要引用zepto的fx.js -->
+    <script src="../lib/zepto/fx.js"></script>
+    <!-- 引入Mui.js -->
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <!-- 引入artTemplate.js -->
+    <script src="../lib/artTemplate/template.js"></script>
+    <!-- 引入base.js-->
+    <script src="../js/base.js"></script>
+    <!-- 引入index.js -->
+    <script src="../js/bijiaProductList.js"></script>
+    <!-- 产品列表模板 -->
+    <script id="product-list" type="text/html">
+        {{each result as value i}}
+        <li class="mui-table-view-cell mui-media ">
+            <a href="./bijiaProduct.html?productId={{value.productId?value.productId:value.productId}}&categoryid={{value.productListId}}" class="row">
+                <div class="mui-col-xs-4 mui-pull-left pic">
+                    {{#value.productImg}}
+                </div>
+                <div class="mui-media-body mui-col-xs-8 mui-pull-left info mui-clearfix">
+                    <div class='title'>{{value.productName}}</div>
+                    <div class="price">
+                        <span> {{value.productPrice}}</span>
+                    </div>
+                    <div class="other">
+                        <div class="baojia mui-pull-left">
+                            {{value.productQuote }}
+                        </div>
+                        <div class="comment mui-pull-left">
+                            {{value.productCom }}
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+
+        {{/each}}
+        <li class="mui-clearfix control">
+            <div class="pre">
+                <a href="#" data-page="{{page > 1 ? page-1 :1 }}">上一页</a>
+            </div>
+            <div class="middle">
+                <form action="">
+                    <select name="page" id="options">{{each pageNum as value i}}
+                        <option value="{{i+1}}" data-page="{{i+1}}">{{i+1}}/{{value}}</option>
+                        {{/each}}
+                    </select>
+                </form>
+            </div>
+            <div class="pre">
+                <a href="#" data-page="{{page>=pagination?pagination:page+1}}">下一页</a>
+            </div>
+        </li>
+    </script>
+
+</body>
+
+</html>

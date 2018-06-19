@@ -1,0 +1,108 @@
+@import "base.less";
+// 头部结束
+#header {
+    height: 44px;
+    background-color: #f4483e;
+    position: relative;
+    z-index: 1001;
+
+    .retreat {
+        font-size: 30px;
+        color: white;
+        padding-top: 6px;
+        padding-left: 12px;
+    }
+
+    .title {
+        width: 120px;
+        position: absolute;
+        left: 50%;
+        margin-left: -60px;
+
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            line-height: 44px;
+            margin: 0;
+        }
+    }
+
+    .appdown {
+        padding-right: 18px;
+    }
+}
+
+// 主体页面
+.main {
+    // height: 200px;
+    padding: 0 3px;
+    .quan-model {
+        margin-top: 10px;
+        // height: 100px;
+        // background-color: #eee;
+
+        ul {
+
+            li {
+                height: 80px;
+                padding: 2px;
+                margin-bottom: 10px;
+                a {
+                    display: block;
+                    text-align: center;
+                    border: 1px solid #eee;
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        margin-top: 5px;
+                    }
+                    p {
+                        display: block;
+                        font-size: 12px;
+                        height: 14px;
+                        line-height: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+
+    .nav {
+        margin: 25px 0;
+        height: 38px;
+        background-color: #ebebeb;
+        background: -webkit-gradient(linear,0 0,0 100%,from(#ffffff),to(#ebebeb));
+        border-top: 1px solid #ebebeb;
+        border-bottom: 1px solid #ccc;
+        padding-left: 8px;
+        a, i {
+            font-size: 14px;
+            line-height: 38px;
+            color: #333;
+        }
+    }
+}
+
+#loading {
+    z-index: 1000;
+}
+
+
+// 底部logo 
+#fixed-module {
+    position: fixed;
+    right: 0px;
+    bottom: 20px;
+    width: 60px;
+    z-index: 999;
+}

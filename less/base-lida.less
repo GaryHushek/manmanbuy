@@ -1,0 +1,82 @@
+// 定义全局的主体颜色
+@mainColor: #ff841d;
+@mainGradient: -webkit-gradient(linear,0 0,0 100%,from(#ffaf47),to(#ff9000));
+
+// 初始化
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #5a5a5a;
+}
+// 清除图片底部三像素
+img {
+  border: none;
+  vertical-algin: middle;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+#header {
+  position: relative;
+  height: 50px;
+  background-color: @mainColor;
+  >div {
+    padding-top: 12px;
+    padding-left: 15px;
+    >a {
+      >img {
+        max-height: 25px;
+        max-width: 185px;
+      } 
+    }
+  }
+  .appdown {
+    height: 100%;
+    padding-top: 7px;
+    padding-right: 7px;
+    >a {
+      >img {
+        max-height: 34px;
+      }
+    }
+  }
+}
+
+#main {
+  width: 100%;
+}
